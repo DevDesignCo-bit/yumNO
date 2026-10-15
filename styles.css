@@ -1,0 +1,34 @@
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html, body { min-height: 100%; margin: 0; }
+body { min-width: 280px; background: #fff8ee; color: #181818; font-family: Arial, Helvetica, sans-serif; }
+
+.screen, .home-screen, .terms-screen { position: relative; width: min(100%, 375px); margin: 0 auto; overflow: hidden; background: #fff8ee; }
+.signup-screen, .pin-screen { aspect-ratio: 375 / 919; }
+.screen-art, .home-screen > img { display: block; width: 100%; height: 100%; }
+
+.phone-form { position: absolute; top: 49.3%; left: 4.3%; right: 3.5%; display: grid; gap: 10px; }
+.phone-field, .pin-field { display: flex; align-items: center; height: 53px; border-radius: 28px; background: #fff; color: #96969a; font-size: 15px; padding-left: 18px; }
+.phone-field input, .pin-field input { width: 100%; height: 100%; min-width: 0; border: 0; outline: 0; background: transparent; color: #303036; font-size: 15px; padding: 0 18px 0 3px; }
+.phone-field:focus-within, .pin-field:focus-within { outline: 3px solid #ff4c35; outline-offset: 2px; }
+
+.pin-field { position: relative; justify-content: center; padding: 0; }
+.pin-field::before { content: '----'; color: #96969a; letter-spacing: 5px; position: absolute; left: 50%; transform: translateX(-50%); pointer-events: none; }
+.pin-field.has-value::before { display: none; }
+.pin-field input { position: relative; text-align: center; font-size: 19px; letter-spacing: 6px; padding: 0; }
+
+.phone-form button { width: 100%; height: 53px; border: 0; border-radius: 28px; background: transparent; color: transparent; cursor: pointer; }
+.phone-form button:focus-visible, a:focus-visible, .home-screen button:focus-visible { outline: 3px solid #ff4c35; outline-offset: 2px; }
+.terms-link { position: absolute; top: 92.2%; left: 43%; width: 16%; height: 2.4%; border-radius: 4px; }
+
+.home-screen { aspect-ratio: 373 / 929; }
+.home-screen > img { height: auto; }
+.add-meal { position: absolute; top: 55%; right: 8%; width: 58px; height: 58px; border: 0; border-radius: 50%; background: transparent; color: transparent; cursor: pointer; }
+.fasting { position: absolute; top: 45.7%; right: 8%; width: 39%; height: 4.2%; border: 0; border-radius: 28px; background: transparent; color: transparent; cursor: pointer; }
+
+.terms-screen { min-height: 100vh; }
+.terms-screen > img { display: block; width: 100%; height: auto; }
+.terms-back { position: absolute; top: 2.3%; left: 3%; width: 13%; height: 2.1%; border-radius: 50%; }
+
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; }
+@media (min-width: 376px) { .screen, .home-screen, .terms-screen { box-shadow: 0 0 34px rgb(151 102 49 / .16); } }

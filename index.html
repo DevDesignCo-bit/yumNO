@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="no">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#fff8ee" />
+    <meta name="description" content="Yumetics – KI-matforberedelse og sporing." />
+    <title>Yumetics</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="screen signup-screen" aria-label="Yumetics – registrering">
+      <img class="screen-art" src="MSISDN.jpg" alt="Yumetics. Registrer mobilnummeret ditt for tilgang." />
+      <form class="phone-form" action="pin.html" method="get">
+        <label class="sr-only" for="phone">Mobilnummer</label>
+        <div class="phone-field">
+          <span aria-hidden="true">+47</span>
+          <input id="phone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national" pattern="[0-9]{8}" maxlength="8" aria-label="Mobilnummer etter +47" required />
+        </div>
+        <button type="submit">BETAL NÅ</button>
+      </form>
+      <a class="terms-link" href="terms.html" aria-label="Vilkår og betingelser"></a>
+    </main>
+    <script>
+      document.querySelector('#phone').addEventListener('input', (event) => {
+        event.target.value = event.target.value.replace(/\D/g, '').slice(0, 8);
+      });
+    </script>
+  </body>
+</html>
